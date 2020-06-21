@@ -1,10 +1,15 @@
 ﻿using System;
+using CsvHelper.Configuration;
+
 namespace FileReader.Mappers
 {
-    public class StudentMap
+    public sealed class UserMap: ClassMap<User>
     {
-        public StudentMap()
+        public UserMap()
         {
+            Map(x => x.Name).Name("Name");
+            Map(x => x.Salary).Name("Salary");
+            Map(x => x.Rate).Name("Rate");
         }
     }
 }
